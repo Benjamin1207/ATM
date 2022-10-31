@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+</head>
+<body> 
+  <body style="background-color:#80ccff;">
+  </body>
+    <figure class="text-center">
+        <blockquote class="blockquote">
+      <div class="p-3 mb-2 bg-danger text-white" ><h1>Pago de servicios varios</h1></div>
+    </blockquote>
+
+    <script type="text/javascript">
+    function cuentasUsuario() {
+        var cuenta = document.getElementById("cuenta"),
+        saldoActual = document.getElementById("saldoActual");
+        saldoActual.value = cuenta.value;
+   }
+   
+   
+         function depositarDinero() {
+             var deposito = parseInt(document.getElementsByName("deposito")[0].value);
+                 saldoActual.value = parseInt(saldoActual.value)+deposito;
+               swal("A cancelado un monto de: " +saldoActual.value);
+       }
+   
+   
+       function verificarSaldo() {
+             document.getElementsByName("verificar")[0].value = saldoActual.value;
+   
+       }
+   
+   
+   </script>
+   <form>
+    
+         
+   Seleccione el servicio a cancelar:
+   
+   <select id="cuenta" class="shadow-sm p-2 mb-5 bg-body rounded" onchange="cuentasUsuario()">
+                   <option  value="0"></option>
+                   <option  value="0">ANDA</option>
+                   <option  value="0">CAESS</option>
+                   <option  value="0">TIGO</option>
+                   <option  value="0">CLARO</option>
+    
+   </select>
+</head>
+<br>
+       <p> Monto actual: <input type="text"  class="shadow-sm p-2 mb-5 bg-body rounded" id="saldoActual"  size="20"></p>
+   
+   
+    <form action="" method="post">
+   
+       <input type="text" name="deposito" class="shadow-sm p-2 mb-5 bg-body rounded" placeholder="Ingrese un monto">
+       <button type="button" class="btn btn-primary"  onclick="depositarDinero()">Pagar</button>
+         </br>
+       </br>   
+  
+   
+   
+       Usted a cancelado el monto de:</br>
+       <input type="text" class="shadow-sm p-2 mb-5 bg-body rounded" name="verificar">
+       <button type="button"  class="btn btn-primary" onclick="verificarSaldo()">Verificar</button>
+       </br>
+       </br>
+
+
+
+    <a href="home.html" class="btn btn-danger"> Menu principal</a>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
